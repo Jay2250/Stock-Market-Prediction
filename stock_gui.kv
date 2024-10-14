@@ -1,0 +1,51 @@
+<StockPredictor>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 10
+
+    Label:
+        text: "Stock Price Predictor"
+        font_size: 24
+        size_hint_y: None
+        height: 40
+
+    TextInput:
+        id: ticker_input
+        hint_text: "Enter Stock Ticker (e.g., AAPL)"
+        multiline: False
+
+    BoxLayout:
+        size_hint_y: None
+        height: 40
+
+        Button:
+            id: model_button
+            text: "Model: linear_regression"
+            on_release: app.dropdown.open(self)
+
+        DropDown:
+            id: dropdown
+            on_select: root.on_model_select(args[1])
+            
+            Button:
+                text: 'linear_regression'
+                size_hint_y: None
+                height: 40
+                on_release: dropdown.select('linear_regression')
+
+            Button:
+                text: 'random_forest'
+                size_hint_y: None
+                height: 40
+                on_release: dropdown.select('random_forest')
+
+    Button:
+        text: "Predict Price"
+        on_press: root.on_predict()
+
+    Label:
+        id: result_label
+        text: "Predicted price will appear here."
+        font_size: 18
+        size_hint_y: None
+        height: 40

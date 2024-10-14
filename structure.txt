@@ -1,0 +1,20 @@
+stock_market_prediction/
+│
+├── data/
+│   ├── raw/                # Store raw data files (CSV, etc.)
+│   └── processed/          # Store processed datasets for modeling
+│
+├── notebooks/              # Jupyter notebooks for exploratory analysis
+│   └── EDA.ipynb           # Notebook for exploratory data analysis
+│
+├── src/                   # Source code for the project
+│   ├── __init__.py        # Makes this directory a package
+│   ├── data_collection.py  # Code for fetching and saving stock data
+│   ├── preprocessing.py     # Code for data preprocessing and feature engineering
+│   ├── visualization.py     # Code for generating visualizations
+│   ├── model.py            # Code for building and evaluating models
+│   └── utils.py            # Utility functions used across the project
+│
+├── requirements.txt        # List of dependencies
+├── README.md               # Project overview and instructions
+└── main.py                 # Main entry point for the project
